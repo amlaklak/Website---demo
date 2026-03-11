@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn. Grow. Succeed. | Charles Mlaklak – Human Development Mentor</title>
+  <meta name="description" content="Charles Mlaklak – Human Development Mentor for students and adults in Lihir, New Ireland Province, Papua New Guinea. Learn. Grow. Succeed." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .font-display { font-family: 'Playfair Display', serif; }
+
+    /* Gradient hero */
+    .hero-bg {
+      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    }
+
+    /* Animated gradient text */
+    .gradient-text {
+      background: linear-gradient(90deg, #f6d365, #fda085, #f093fb, #f5576c);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 4s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Gold accent */
+    .gold { color: #f6c90e; }
+    .bg-gold { background-color: #f6c90e; }
+    .border-gold { border-color: #f6c90e; }
+
+    /* Card hover */
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    /* Nav scroll */
+    .nav-scrolled {
+      background: rgba(15, 32, 39, 0.97) !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Section divider wave */
+    .wave-divider svg { display: block; }
+
+    /* Pulse ring */
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 3px solid #f6c90e;
+      animation: pulseRing 2s ease-out infinite;
+    }
+    @keyframes pulseRing {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.3); }
+    }
+
+    /* Fade-in animation */
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Mobile menu */
+    #mobile-menu { transition: max-height 0.4s ease, opacity 0.4s ease; max-height: 0; opacity: 0; overflow: hidden; }
+    #mobile-menu.open { max-height: 400px; opacity: 1; }
+
+    /* Timeline */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -29px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: #f6c90e;
+      border-radius: 50%;
+      border: 3px solid #0f2027;
+    }
+
+    /* Testimonial card */
+    .testimonial-card {
+      background: linear-gradient(135deg, #1a3a4a, #0f2027);
+      border: 1px solid rgba(246, 201, 14, 0.2);
+    }
+
+    /* PNG flag accent */
+    .png-accent {
+      background: linear-gradient(90deg, #000000 0%, #ce1126 50%, #f7a600 100%);
+      height: 4px;
+      border-radius: 2px;
+    }
+
+    /* Button glow */
+    .btn-glow {
+      background: linear-gradient(135deg, #f6c90e, #fda085);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(246, 201, 14, 0.4);
+    }
+    .btn-glow:hover {
+      box-shadow: 0 6px 25px rgba(246, 201, 14, 0.7);
+      transform: translateY(-2px);
+    }
+
+    /* Section heading underline */
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #f6c90e, #fda085);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Contact card */
+    .contact-glow {
+      box-shadow: 0 0 30px rgba(246, 201, 14, 0.15);
+    }
+
+    /* Star rating */
+    .stars { color: #f6c90e; }
+
+    /* Back to top */
+    #back-to-top {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    #back-to-top.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 bg-transparent">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3">
+        <div class="relative w-11 h-11 pulse-ring">
+          <div class="w-11 h-11 rounded-full bg-gold flex items-center justify-center">
+            <span class="text-gray-900 font-bold text-lg">CM</span>
+          </div>
+        </div>
+        <div class="hidden sm:block">
+          <div class="text-white font-bold text-lg leading-tight">Charles Mlaklak</div>
+          <div class="gold text-xs font-medium tracking-widest uppercase">Human Development</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-gray-300 hover:text-yellow-400 transition font-medium text-sm">About</a>
+        <a href="#services" class="text-gray-300 hover:text-yellow-400 transition font-medium text-sm">Services</a>
+        <a href="#journey" class="text-gray-300 hover:text-yellow-400 transition font-medium text-sm">My Journey</a>
+        <a href="#testimonials" class="text-gray-300 hover:text-yellow-400 transition font-medium text-sm">Testimonials</a>
+        <a href="#contact" class="text-gray-300 hover:text-yellow-400 transition font-medium text-sm">Contact</a>
+        <a href="/cdn-cgi/l/email-protection#b8dbd0d9cad4ddcb96d6decddbf8dfd5d9d1d496dbd7d5" class="btn-glow text-gray-900 font-bold px-5 py-2.5 rounded-full text-sm">
+          <i class="fas fa-envelope mr-2"></i>Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="hamburger" class="md:hidden text-white text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-gray-900 rounded-xl mt-3 mx-0">
+      <div class="flex flex-col gap-1 px-4 py-4">
+        <a href="#about" class="text-gray-300 hover:text-yellow-400 py-2 font-medium" onclick="closeMenu()">About</a>
+        <a href="#services" class="text-gray-300 hover:text-yellow-400 py-2 font-medium" onclick="closeMenu()">Services</a>
+        <a href="#journey" class="text-gray-300 hover:text-yellow-400 py-2 font-medium" onclick="closeMenu()">My Journey</a>
+        <a href="#testimonials" class="text-gray-300 hover:text-yellow-400 py-2 font-medium" onclick="closeMenu()">Testimonials</a>
+        <a href="#contact" class="text-gray-300 hover:text-yellow-400 py-2 font-medium" onclick="closeMenu()">Contact</a>
+        <a href="/cdn-cgi/l/email-protection#f4979c9586989187da9a928197b49399959d98da979b99" class="btn-glow text-gray-900 font-bold px-5 py-2.5 rounded-full text-sm text-center mt-2">
+          <i class="fas fa-envelope mr-2"></i>Get in Touch
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero-bg min-h-screen flex flex-col justify-center relative overflow-hidden">
+    <!-- Background elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-yellow-400 opacity-5 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-400 opacity-5 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500 opacity-5 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- PNG Flag Stripe -->
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-black via-red-600 to-yellow-500 opacity-80"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-32 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      <!-- Text -->
+      <div class="text-center lg:text-left">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-yellow-400 bg-opacity-10 border border-yellow-400 border-opacity-30 rounded-full px-4 py-2 mb-6">
+          <i class="fas fa-map-marker-alt gold text-sm"></i>
+          <span class="text-yellow-300 text-sm font-medium">Lihir, New Ireland Province, PNG</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
+          <span class="gradient-text">Learn.</span><br/>
+          <span class="gradient-text">Grow.</span><br/>
+          <span class="gradient-text">Succeed.</span>
+        </h1>
+
+        <p class="text-xl text-gray-300 font-light mb-3 mt-6">
+          Hi, I'm <span class="text-yellow-400 font-semibold">Charles Mlaklak</span>
+        </p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+          A dedicated <strong class="text-white">Human Development Mentor</strong> empowering students and adults to unlock their full potential — right here in <span class="gold font-semibold">Lihir Island</span>.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#services" class="btn-glow text-gray-900 font-bold px-8 py-4 rounded-full text-base flex items-center justify-center gap-2">
+            <i class="fas fa-rocket"></i> Explore My Services
+          </a>
+          <a href="#contact" class="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 font-bold px-8 py-4 rounded-full text-base transition-all duration-300 flex items-center justify-center gap-2">
+            <i class="fas fa-handshake"></i> Work With Me
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex gap-8 mt-12 justify-center lg:justify-start">
+          <div class="text-center">
+            <div class="text-3xl font-bold gold">100+</div>
+            <div class="text-gray-400 text-sm mt-1">Lives Impacted</div>
+          </div>
+          <div class="w-px bg-gray-700"></div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gold">5+</div>
+            <div class="text-gray-400 text-sm mt-1">Years Mentoring</div>
+          </div>
+          <div class="w-px bg-gray-700"></div>
+          <div class="text-center">
+            <div class="text-3xl font-bold gold">PNG</div>
+            <div class="text-gray-400 text-sm mt-1">Based & Proud</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portrait / Illustration -->
+      <div class="flex justify-center items-center">
+        <div class="relative">
+          <!-- Outer glow ring -->
+          <div class="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 opacity-20 blur-2xl scale-110"></div>
+
+          <!-- Main Circle -->
+          <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-yellow-400 border-opacity-50 shadow-2xl bg-gradient-to-br from-gray-700 to-gray-900 flex flex-col items-center justify-center">
+            <!-- Avatar placeholder -->
+            <div class="text-center px-8">
+              <div class="w-28 h-28 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mx-auto mb-4 shadow-xl">
+                <span class="text-gray-900 text-5xl font-black">CM</span>
+              </div>
+              <p class="text-white text-xl font-bold">Charles Mlaklak</p>
+              <p class="text-yellow-400 text-sm font-medium mt-1">Human Development Mentor</p>
+              <div class="mt-3 flex justify-center gap-1 stars">
+                <i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="absolute -top-4 -right-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-2 rounded-full shadow-lg animate-bounce">
+            <i class="fas fa-graduation-cap mr-1"></i>Mentor
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded-full shadow-lg">
+            <i class="fas fa-map-marker-alt mr-1"></i>Lihir, PNG
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-gray-400 text-xs uppercase tracking-widest">Scroll Down</span>
+      <i class="fas fa-chevron-down text-yellow-400"></i>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider bg-gray-900 -mt-1">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80">
+      <path fill="#0f2027" fill-opacity="1" d="M0,40L48,45C96,50,192,60,288,58C384,56,480,42,576,37C672,32,768,36,864,42C960,48,1056,56,1152,55C1248,54,1344,44,1392,39L1440,34L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+    </svg>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="py-24 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Left: Content -->
+        <div class="fade-in">
+          <div class="inline-block bg-yellow-400 bg-opacity-10 border border-yellow-400 border-opacity-30 text-yellow-400 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-5">
+            About Me
+          </div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6 section-title">
+            Who Is <span class="gradient-text">Charles Mlaklak?</span>
+          </h2>
+          <p class="text-gray-300 leading-relaxed text-lg mb-5">
+            I am <strong class="text-white">Charles Mlaklak</strong>, a passionate human development mentor based in <strong class="gold">Lihir Island, New Ireland Province, Papua New Guinea</strong>. My mission is simple: to walk alongside students and adults as they discover their God-given potential.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-5">
+            Growing up in PNG, I understand the unique challenges our communities face — from limited access to quality education, to navigating personal and professional growth in a rapidly changing world. These experiences drove me to become the mentor I wish I had.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-8">
+            Whether you're a student trying to find direction, or an adult seeking personal development and life skills, I offer guidance grounded in real experience, cultural understanding, and a deep commitment to seeing Lihir and New Ireland thrive.
+          </p>
+
+          <!-- PNG Accent Bar -->
+          <div class="png-accent mb-8 w-40"></div>
+
+          <!-- Core values -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+              <i class="fas fa-heart text-yellow-400 text-xl mb-2"></i>
+              <div class="text-white font-semibold text-sm">Passion-Driven</div>
+              <div class="text-gray-400 text-xs mt-1">Deeply committed to every person I mentor</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+              <i class="fas fa-leaf text-green-400 text-xl mb-2"></i>
+              <div class="text-white font-semibold text-sm">Community Rooted</div>
+              <div class="text-gray-400 text-xs mt-1">Proud to serve Lihir & New Ireland</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+              <i class="fas fa-lightbulb text-orange-400 text-xl mb-2"></i>
+              <div class="text-white font-semibold text-sm">Practical Wisdom</div>
+              <div class="text-gray-400 text-xs mt-1">Real strategies for real challenges</div>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-4 border border-gray-700">
+              <i class="fas fa-hands-helping text-blue-400 text-xl mb-2"></i>
+              <div class="text-white font-semibold text-sm">Empowerment</div>
+              <div class="text-gray-400 text-xs mt-1">Building confidence and independence</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Mission Cards -->
+        <div class="fade-in space-y-6">
+          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-2xl bg-yellow-400 bg-opacity-10 flex items-center justify-center flex-shrink-0 border border-yellow-400 border-opacity-30">
+                <i class="fas fa-bullseye gold text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-xl mb-2">My Mission</h3>
+                <p class="text-gray-400 leading-relaxed">To equip individuals in Lihir and across Papua New Guinea with the mindset, tools, and confidence to <em class="text-yellow-300">Learn, Grow, and Succeed</em> — regardless of their background.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-2xl bg-blue-500 bg-opacity-10 flex items-center justify-center flex-shrink-0 border border-blue-500 border-opacity-30">
+                <i class="fas fa-eye text-blue-400 text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-xl mb-2">My Vision</h3>
+                <p class="text-gray-400 leading-relaxed">A Lihir and New Ireland where every student graduates with purpose, and every adult lives a life of fulfillment, dignity, and continuous self-improvement.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-2xl bg-green-500 bg-opacity-10 flex items-center justify-center flex-shrink-0 border border-green-500 border-opacity-30">
+                <i class="fas fa-map-marked-alt text-green-400 text-2xl"></i>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-xl mb-2">Local Impact</h3>
+                <p class="text-gray-400 leading-relaxed">Proudly serving the <strong class="text-white">Lihir Island community</strong> — understanding PNG's unique cultural context to deliver mentorship that truly resonates and creates lasting change.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="bg-white">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80">
+      <path fill="#111827" fill-opacity="1" d="M0,64L80,58C160,53,320,42,480,37C640,32,800,32,960,37C1120,43,1280,53,1360,58L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+    </svg>
+  </div>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <div class="inline-block bg-yellow-50 border border-yellow-300 text-yellow-700 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-5">
+          What I Offer
+        </div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4 section-title">
+          My Mentoring <span class="text-yellow-500">Services</span>
+        </h2>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg">
+          Tailored guidance for students and adults at every stage of their journey — from school to career, and beyond.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="fade-in bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border border-yellow-100 card-hover">
+          <div class="w-16 h-16 rounded-2xl bg-yellow-400 flex items-center justify-center mb-6 shadow-lg">
+            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+          </div>
+          <h3 class="text-gray-900 font-bold text-xl mb-3">Student Mentoring</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">Supporting school students with academic guidance, study skills, goal setting, and career planning so they can achieve their educational dreams.</p>
+          <ul class="space-y-2 text-gray-500 text-sm">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-500"></i> Study strategies & time management</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-500"></i> Goal setting & academic planning</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-500"></i> Career pathway guidance</li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="fade-in bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100 card-hover">
+          <div class="w-16 h-16 rounded-2xl bg-blue-500 flex items-center justify-center mb-6 shadow-lg">
+            <i class="fas fa-brain text-white text-2xl"></i>
+          </div>
+          <h3 class="text-gray-900 font-bold text-xl mb-3">Personal Development</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">Helping adults build self-awareness, emotional intelligence, and the mindset needed to overcome challenges and live purposeful lives.</p>
+          <ul class="space-y-2 text-gray-500 text-sm">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-500"></i> Mindset transformation</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-500"></i> Emotional intelligence coaching</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-500"></i> Confidence building</li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="fade-in bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 border border-green-100 card-hover">
+          <div class="w-16 h-16 rounded-2xl bg-green-500 flex items-center justify-center mb-6 shadow-lg">
+            <i class="fas fa-briefcase text-white text-2xl"></i>
+          </div>
+          <h3 class="text-gray-900 font-bold text-xl mb-3">Career & Life Skills</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">Equipping adults with practical skills for career growth, job readiness, entrepreneurship, and financial literacy in the PNG context.</p>
+          <ul class="space-y-2 text-gray-500 text-sm">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Job readiness & CV writing</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Entrepreneurship basics</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-500"></i> Financial life skills</li>
+          </ul>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="fade-in bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-100 card-hover">
+          <div class="w-16 h-16 rounded-2xl bg-purple-500 flex items-center justify-center mb-6 shadow-lg">
+            <i class="fas fa-users text-white text-2xl"></i>
+          </div>
+          <h3 class="text-gray-900 font-bold text-xl mb-3">Group Workshops</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">Energizing group sessions for schools, community groups, and organisations — covering leadership, communication, and team development.</p>
+          <ul class="space-y-2 text-gray-500 text-sm">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500"></i> Leadership development workshops</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500"></i> Communication skills training</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-500"></i> Youth empowerment sessions</li>
+          </ul>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="fade-in bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100 card-hover">
+          <div class="w-16 h-16 rounded-2xl bg-red-500 flex items-center justify-center mb-6 shadow-lg">
+            <i class="fas fa-comment-dots text-white text-2xl"></i>
+          </div>
+          <h3 class="text-gray-900 font-bold text-xl mb-3">1-on-1 Coaching</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">Personalised one-on-one coaching sessions designed around your specific goals, challenges, and aspirations for lasting transformation.</p>
+          <ul class="space-y-2 text-gray-500 text-sm">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-500"></i> Personalised action plans</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-500"></i> Ongoing accountability support</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-500"></i> Progress tracking & reviews</li>
+          </ul>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="fade-in bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 card-hover">
+          <div class="w-16 h-16 rounded-2xl bg-yellow-400 flex items-center justify-center mb-6 shadow-lg">
+            <i class="fas fa-chalkboard-teacher text-gray-900 text-2xl"></i>
+          </div>
+          <h3 class="text-white font-bold text-xl mb-3">Community Talks</h3>
+          <p class="text-gray-400 leading-relaxed mb-5">Inspirational talks for schools, churches, and community events in Lihir and New Ireland Province — spreading hope and motivation.</p>
+          <ul class="space-y-2 text-gray-500 text-sm">
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-400"></i> Motivational speaking</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-400"></i> Youth rallies & events</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-400"></i> Church & community engagements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOURNEY ===== -->
+  <section id="journey" class="py-24 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <div class="inline-block bg-yellow-400 bg-opacity-10 border border-yellow-400 border-opacity-30 text-yellow-400 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-5">
+          My Story
+        </div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4 section-title">
+          My <span class="gradient-text">Journey</span>
+        </h2>
+        <p class="text-gray-400 max-w-xl mx-auto">From the shores of Lihir Island to becoming a dedicated mentor — here's how my path unfolded.</p>
+      </div>
+
+      <div class="relative border-l-2 border-yellow-400 border-opacity-30 pl-8 space-y-12">
+
+        <div class="fade-in relative timeline-item">
+          <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+            <span class="text-yellow-400 text-xs font-bold tracking-widest uppercase">Early Beginnings</span>
+            <h3 class="text-white font-bold text-xl mt-1 mb-2">Roots in Lihir Island</h3>
+            <p class="text-gray-400 leading-relaxed">Born and raised in Lihir, New Ireland Province, Papua New Guinea, I grew up in a close-knit community shaped by tradition, resilience, and a deep desire to see our people succeed. Early on, I recognised the untapped potential in those around me.</p>
+          </div>
+        </div>
+
+        <div class="fade-in relative timeline-item">
+          <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+            <span class="text-blue-400 text-xs font-bold tracking-widest uppercase">Discovery</span>
+            <h3 class="text-white font-bold text-xl mt-1 mb-2">Discovering Human Development</h3>
+            <p class="text-gray-400 leading-relaxed">I discovered my passion for human development through personal struggles and triumphs. I learned that with the right guidance, resources, and mindset, every individual — regardless of background — can rise above their circumstances and build a meaningful life.</p>
+          </div>
+        </div>
+
+        <div class="fade-in relative timeline-item">
+          <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+            <span class="text-green-400 text-xs font-bold tracking-widest uppercase">Growth</span>
+            <h3 class="text-white font-bold text-xl mt-1 mb-2">Starting to Mentor</h3>
+            <p class="text-gray-400 leading-relaxed">I began mentoring students and adults in Lihir informally — sharing what I had learned about goal setting, personal discipline, and living purposefully. The transformation I witnessed in others fuelled my commitment to formalise this work.</p>
+          </div>
+        </div>
+
+        <div class="fade-in relative timeline-item">
+          <div class="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+            <span class="text-yellow-400 text-xs font-bold tracking-widest uppercase">Today</span>
+            <h3 class="text-white font-bold text-xl mt-1 mb-2">Learn. Grow. Succeed.</h3>
+            <p class="text-gray-400 leading-relaxed">Today, I serve the Lihir and New Ireland community as a dedicated Human Development Mentor, conducting workshops, coaching sessions, and community talks. My goal is to see PNG's next generation rise with confidence, skills, and purpose. This is just the beginning.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="bg-gray-50">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80">
+      <path fill="#111827" fill-opacity="1" d="M0,32L80,37C160,43,320,53,480,53C640,53,800,43,960,37C1120,32,1280,32,1360,37L1440,43L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+    </svg>
+  </div>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <div class="inline-block bg-yellow-50 border border-yellow-300 text-yellow-700 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-5">
+          Feedback
+        </div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-4 section-title">
+          What People <span class="text-yellow-500">Say</span>
+        </h2>
+        <p class="text-gray-500 max-w-xl mx-auto">Real words from real people whose lives have been touched through mentoring.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="fade-in testimonial-card rounded-2xl p-8 card-hover">
+          <div class="stars flex gap-1 mb-4 text-sm">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-300 italic leading-relaxed mb-6">"Charles helped me see that I had more potential than I ever imagined. His guidance changed my approach to school and now I have clear goals for my future."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-gray-900">MK</div>
+            <div>
+              <div class="text-white font-semibold text-sm">Mary K.</div>
+              <div class="text-gray-500 text-xs">Student, Lihir</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in testimonial-card rounded-2xl p-8 card-hover">
+          <div class="stars flex gap-1 mb-4 text-sm">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-300 italic leading-relaxed mb-6">"I attended one of Charles's workshops and it was life-changing. His passion is genuine, and he speaks our language — both literally and figuratively. Highly recommended."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold text-white">JP</div>
+            <div>
+              <div class="text-white font-semibold text-sm">James P.</div>
+              <div class="text-gray-500 text-xs">Community Leader, New Ireland</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in testimonial-card rounded-2xl p-8 card-hover">
+          <div class="stars flex gap-1 mb-4 text-sm">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-300 italic leading-relaxed mb-6">"As a young adult unsure of my career path, Charles provided me with practical tools and genuine encouragement. I now run a small business and credit much of my confidence to his mentorship."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center font-bold text-white">AT</div>
+            <div>
+              <div class="text-white font-semibold text-sm">Anna T.</div>
+              <div class="text-gray-500 text-xs">Young Entrepreneur, Lihir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="py-24 hero-bg relative overflow-hidden">
+    <!-- Background blobs -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-yellow-400 opacity-5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-blue-400 opacity-5 rounded-full blur-3xl"></div>
+
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16 fade-in">
+        <div class="inline-block bg-yellow-400 bg-opacity-10 border border-yellow-400 border-opacity-30 text-yellow-400 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-5">
+          Get In Touch
+        </div>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-4 section-title">
+          Ready to <span class="gradient-text">Start Your Journey?</span>
+        </h2>
+        <p class="text-gray-400 max-w-xl mx-auto text-lg">Reach out today. Whether you're a student, a parent, or an adult seeking guidance — I'm here for you.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Contact Info -->
+        <div class="fade-in space-y-6">
+          <!-- Email Card -->
+          <div class="contact-glow bg-gray-800 bg-opacity-80 backdrop-blur rounded-2xl p-6 border border-gray-700 flex items-center gap-5 card-hover">
+            <div class="w-14 h-14 rounded-2xl bg-yellow-400 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-envelope text-gray-900 text-xl"></i>
+            </div>
+            <div>
+              <div class="text-gray-400 text-xs uppercase tracking-widest font-medium mb-1">Email Address</div>
+              <a href="/cdn-cgi/l/email-protection#b2d1dad3c0ded7c19cdcd4c7d1f2d5dfd3dbde9cd1dddf" class="text-white font-semibold text-lg hover:text-yellow-400 transition"><span class="__cf_email__" data-cfemail="57343f36253b3224793931223417303a363e3b7934383a">[email&#160;protected]</span></a>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="bg-gray-800 bg-opacity-80 backdrop-blur rounded-2xl p-6 border border-gray-700 flex items-center gap-5 card-hover">
+            <div class="w-14 h-14 rounded-2xl bg-red-500 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-white text-xl"></i>
+            </div>
+            <div>
+              <div class="text-gray-400 text-xs uppercase tracking-widest font-medium mb-1">Location</div>
+              <div class="text-white font-semibold text-lg">Lihir Island, New Ireland</div>
+              <div class="text-gray-400 text-sm">Papua New Guinea 🇵🇬</div>
+            </div>
+          </div>
+
+          <!-- Availability Card -->
+          <div class="bg-gray-800 bg-opacity-80 backdrop-blur rounded-2xl p-6 border border-gray-700 flex items-center gap-5 card-hover">
+            <div class="w-14 h-14 rounded-2xl bg-green-500 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-calendar-check text-white text-xl"></i>
+            </div>
+            <div>
+              <div class="text-gray-400 text-xs uppercase tracking-widest font-medium mb-1">Availability</div>
+              <div class="text-white font-semibold text-lg">Open for Mentoring</div>
+              <div class="text-green-400 text-sm flex items-center gap-1 mt-1"><span class="w-2 h-2 bg-green-400 rounded-full inline-block animate-pulse"></span> Currently Accepting Mentees</div>
+            </div>
+          </div>
+
+          <!-- Focus Areas -->
+          <div class="bg-gray-800 bg-opacity-80 backdrop-blur rounded-2xl p-6 border border-gray-700">
+            <div class="text-gray-400 text-xs uppercase tracking-widest font-medium mb-3">Focus Areas</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-yellow-400 bg-opacity-10 border border-yellow-400 border-opacity-30 text-yellow-400 text-xs px-3 py-1 rounded-full">Students</span>
+              <span class="bg-blue-500 bg-opacity-10 border border-blue-500 border-opacity-30 text-blue-400 text-xs px-3 py-1 rounded-full">Adults</span>
+              <span class="bg-green-500 bg-opacity-10 border border-green-500 border-opacity-30 text-green-400 text-xs px-3 py-1 rounded-full">Human Development</span>
+              <span class="bg-purple-500 bg-opacity-10 border border-purple-500 border-opacity-30 text-purple-400 text-xs px-3 py-1 rounded-full">Leadership</span>
+              <span class="bg-red-500 bg-opacity-10 border border-red-500 border-opacity-30 text-red-400 text-xs px-3 py-1 rounded-full">Life Skills</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="fade-in">
+          <div class="bg-gray-800 bg-opacity-80 backdrop-blur rounded-2xl p-8 border border-gray-700 contact-glow">
+            <h3 class="text-white font-bold text-xl mb-6 flex items-center gap-3">
+              <i class="fas fa-paper-plane gold"></i> Send a Message
+            </h3>
+            <form id="contact-form" onsubmit="handleSubmit(event)" class="space-y-5">
+              <div>
+                <label class="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">Your Name *</label>
+                <input type="text" id="fname" placeholder="e.g. John Kaupa" required
+                  class="w-full bg-gray-900 border border-gray-600 focus:border-yellow-400 text-white rounded-xl px-4 py-3 outline-none transition placeholder-gray-600 text-sm" />
+              </div>
+              <div>
+                <label class="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">Email Address *</label>
+                <input type="email" id="femail" placeholder="your@email.com" required
+                  class="w-full bg-gray-900 border border-gray-600 focus:border-yellow-400 text-white rounded-xl px-4 py-3 outline-none transition placeholder-gray-600 text-sm" />
+              </div>
+              <div>
+                <label class="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">I Am A *</label>
+                <select id="ftype" class="w-full bg-gray-900 border border-gray-600 focus:border-yellow-400 text-white rounded-xl px-4 py-3 outline-none transition text-sm">
+                  <option value="student">Student</option>
+                  <option value="adult">Adult</option>
+                  <option value="parent">Parent</option>
+                  <option value="organisation">Organisation / School</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-gray-400 text-xs font-medium uppercase tracking-wider block mb-2">Message *</label>
+                <textarea id="fmessage" rows="4" placeholder="Tell Charles about yourself and what you'd like help with..." required
+                  class="w-full bg-gray-900 border border-gray-600 focus:border-yellow-400 text-white rounded-xl px-4 py-3 outline-none transition placeholder-gray-600 text-sm resize-none"></textarea>
+              </div>
+              <button type="submit" class="btn-glow w-full text-gray-900 font-bold py-4 rounded-xl text-sm flex items-center justify-center gap-2">
+                <i class="fas fa-paper-plane"></i> Send Message to Charles
+              </button>
+            </form>
+            <div id="form-success" class="hidden text-center py-8">
+              <div class="w-16 h-16 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-green-400 text-2xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-lg mb-2">Message Sent!</h4>
+              <p class="text-gray-400">Thank you! Charles will get back to you soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-gray-950 py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- PNG Flag Strip -->
+      <div class="png-accent mb-8 w-full"></div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center">
+              <span class="text-gray-900 font-bold">CM</span>
+            </div>
+            <div>
+              <div class="text-white font-bold">Charles Mlaklak</div>
+              <div class="gold text-xs">Human Development Mentor</div>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm leading-relaxed">Empowering students and adults in Lihir, New Ireland Province, Papua New Guinea to <em class="text-gray-400">Learn, Grow, and Succeed</em>.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-gray-500 hover:text-yellow-400 transition text-sm"><i class="fas fa-chevron-right text-xs mr-1"></i>About Me</a></li>
+            <li><a href="#services" class="text-gray-500 hover:text-yellow-400 transition text-sm"><i class="fas fa-chevron-right text-xs mr-1"></i>Services</a></li>
+            <li><a href="#journey" class="text-gray-500 hover:text-yellow-400 transition text-sm"><i class="fas fa-chevron-right text-xs mr-1"></i>My Journey</a></li>
+            <li><a href="#testimonials" class="text-gray-500 hover:text-yellow-400 transition text-sm"><i class="fas fa-chevron-right text-xs mr-1"></i>Testimonials</a></li>
+            <li><a href="#contact" class="text-gray-500 hover:text-yellow-400 transition text-sm"><i class="fas fa-chevron-right text-xs mr-1"></i>Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 text-gray-500 text-sm">
+              <i class="fas fa-envelope gold w-4"></i>
+              <a href="/cdn-cgi/l/email-protection#32515a53405e57411c5c54475172555f535b5e1c515d5f" class="hover:text-yellow-400 transition"><span class="__cf_email__" data-cfemail="9bf8f3fae9f7fee8b5f5fdeef8dbfcf6faf2f7b5f8f4f6">[email&#160;protected]</span></a>
+            </div>
+            <div class="flex items-center gap-3 text-gray-500 text-sm">
+              <i class="fas fa-map-marker-alt text-red-400 w-4"></i>
+              <span>Lihir Island, New Ireland, PNG</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-500 text-sm">
+              <i class="fas fa-globe text-blue-400 w-4"></i>
+              <span>Papua New Guinea 🇵🇬</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-gray-600 text-sm text-center">
+          © 2025 Charles Mlaklak — <span class="gold">Learn. Grow. Succeed.</span> All rights reserved.
+        </p>
+        <p class="text-gray-700 text-xs">Proudly serving Lihir, New Ireland Province, Papua New Guinea 🇵🇬</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    class="fixed bottom-8 right-8 w-12 h-12 bg-yellow-400 text-gray-900 rounded-full shadow-lg flex items-center justify-center z-50 hover:bg-yellow-300 transition">
+    <i class="fas fa-chevron-up font-bold"></i>
+  </button>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+      // Back to top
+      const btn = document.getElementById('back-to-top');
+      if (window.scrollY > 400) btn.classList.add('show');
+      else btn.classList.remove('show');
+    });
+
+    // Mobile menu
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('open');
+    });
+    function closeMenu() {
+      document.getElementById('mobile-menu').classList.remove('open');
+    }
+
+    // Fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Contact form
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fname').value;
+      const email = document.getElementById('femail').value;
+      const type = document.getElementById('ftype').value;
+      const message = document.getElementById('fmessage').value;
+
+      // Compose mailto
+      const subject = encodeURIComponent('Mentoring Enquiry from ' + name);
+      const body = encodeURIComponent(
+        'Hello Charles,\n\nName: ' + name +
+        '\nEmail: ' + email +
+        '\nI am a: ' + type +
+        '\n\nMessage:\n' + message +
+        '\n\nSent from your Learn. Grow. Succeed. website.'
+      );
+      window.location.href = 'mailto:charles.nfuc@gmail.com?subject=' + subject + '&body=' + body;
+
+      // Show success
+      document.getElementById('contact-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    }
+
+    // Smooth active nav
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+    });
+  </script>
+<script src="https://www.genspark.ai/sandbox_inspect.js"></script>
+</body>
+</html>
